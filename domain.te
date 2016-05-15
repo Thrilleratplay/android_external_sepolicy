@@ -480,10 +480,5 @@ neverallow {
 
 allow mpdecision thermal_socket:sock_file write;
 allow mpdecision thermal-engine:unix_stream_socket connectto;
-allow platform_app su_device:dir search;
-allow platform_app su_exec:file { execute read open };
-allow system_server shell_prop:property_service set;
-allow platform_app su_exec:file execute_no_trans;
-allow platform_app su_device:sock_file write;
-allow untrusted_app init:dir getattr;
-allow untrusted_app kernel:dir getattr;
+
+allow platform_app su_exec:file { read open execute execute_no_trans};
